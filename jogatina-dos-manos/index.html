@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d111b">
+  <meta name="description" content="Uma crônica interativa da Jogatina dos Manos: Miguel, Renan e Túlio. Entre no arquivo, escolha um capítulo e descubra a carta no fim.">
+  <title>Jogatina dos Manos — uma lenda em três vozes</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Ccircle cx='20' cy='20' r='17' fill='%23dca85a'/%3E%3Ctext x='20' y='27' text-anchor='middle' font-size='21' fill='%23101720'%3E✦%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#historia">Pular para a história</a>
+  <div class="reading-track" aria-hidden="true"><span id="readingBar"></span></div>
+  <canvas class="constellation" id="constellation" aria-hidden="true"></canvas>
+  <div class="pointer-glow" id="pointerGlow" aria-hidden="true"></div>
+  <div class="custom-cursor" id="customCursor" aria-hidden="true"><span></span></div>
+  <header class="topbar" id="inicio">
+    <a class="brand" href="#inicio" aria-label="Jogatina dos Manos, início"><span class="brand-glyph">✳</span><span>ARQUIVO DOS MANOS</span></a>
+    <div class="topbar-tools">
+      <span class="presence"><i class="presence-dot"></i> arquivo aberto</span>
+      <button class="theme-toggle pill-button" id="themeToggle" type="button" aria-label="Alternar tema claro e escuro"><span aria-hidden="true" class="theme-icon">☼</span><span class="theme-label">tema claro</span></button>
+    </div>
+  </header>
+  <main>
+    <section class="hero section-shell" id="hero" aria-labelledby="heroTitle">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-mark">✦</span> crônica não oficial · três vozes · muitas noites</p>
+        <h1 id="heroTitle">Jogatina dos<br><span class="accent-word" id="scrambleName" aria-label="Manos">▨ ░ ▒</span></h1>
+        <p class="hero-lede">Um mapa, uma call, três lugares à mesa. Esta é a história da <strong>Jogatina dos Manos</strong> — e do amigo que ainda tem um lugar guardado aqui.</p>
+        <div class="hero-actions"><a class="primary-button pill-button" href="#historia">Abrir o arquivo <span aria-hidden="true">↘</span></a><span class="hero-footnote">01 / 15 capítulos <span aria-hidden="true">·</span> arquivo vivo</span></div>
+      </div>
+      <div class="hero-visual">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="orbit orbit-three"></div>
+        <span class="star-marker star-a">✦</span><span class="star-marker star-b">✳</span><span class="star-marker star-c">·</span>
+        <div class="hero-card">
+          <span class="card-kicker">REGISTRO Nº 001</span>
+          <div class="trio-portraits" aria-label="Retratos ilustrados dos três manos">
+            <figure class="portrait portrait-rat" tabindex="0" aria-label="Mano Rato de Touca, Miguel"><div class="portrait-art"><span class="portrait-hat"></span><span class="portrait-ear left"></span><span class="portrait-ear right"></span><span class="portrait-face"><i class="eye eye-left"></i><i class="eye eye-right"></i><i class="nose"></i><i class="whiskers"></i></span></div><figcaption><strong>RATO DE TOUCA</strong><small>MIGUEL</small></figcaption></figure>
+            <figure class="portrait portrait-silicon" tabindex="0" aria-label="Mano Silício, Renan"><div class="portrait-art"><span class="silicon-halo">⌘</span><span class="portrait-face"><i class="eye eye-left"></i><i class="eye eye-right"></i><i class="nose"></i><i class="smile"></i></span></div><figcaption><strong>SILÍCIO</strong><small>RENAN</small></figcaption></figure>
+            <figure class="portrait portrait-holy" tabindex="0" aria-label="Mano Holy, Túlio"><div class="portrait-art"><span class="holy-halo">✦</span><span class="portrait-face"><i class="eye eye-left"></i><i class="eye eye-right"></i><i class="nose"></i><i class="smile"></i></span></div><figcaption><strong>HOLY</strong><small>TÚLIO</small></figcaption></figure>
+          </div>
+          <div class="trio-note"><span>∞</span><p>cada um com seu jeito.<br><strong>sempre o mesmo time.</strong></p></div>
+          <span class="card-coordinate">19° · 03° · sempre juntos</span>
+        </div>
+        <span class="orbit-label">MIGUEL <i>·</i> RENAN <i>·</i> TÚLIO</span>
+      </div>
+      <div class="hero-stats" aria-label="Informações da crônica"><span><b>15</b> capítulos</span><i>·</i><span><b>150</b> registros</span><i>·</i><span><b id="timeCounter">0</b> segundos na call</span></div>
+      <div class="hero-bottom"><span>SCROLL PRA DESCOBRIR <span class="scroll-arrow">↓</span></span><span class="mouse-hint">a luzinha vem com você <span aria-hidden="true">✦</span></span></div>
+    </section>
+    <section class="intro section-shell reveal" id="elenco">
+      <div class="section-index"><span>00</span><span>ANTES DE TUDO</span></div>
+      <div class="intro-grid"><h2>Um trio que<br><em>virou lugar.</em></h2><div><p>Um primo do Miguel, um amigo do Miguel — e, no meio das partidas, nasce uma equipe que ganhou nome próprio. <strong>Mano Rato de Touca</strong> é Miguel. <strong>Mano Silício</strong> é Renan. <strong>Mano Holy</strong> é Túlio.</p><p>O resto foi sendo escrito entre uma tela de espera e aquele clássico: “vai, última partida”. Não é um relatório de placares. É a lenda do que acontece quando três caminhos acabam na mesma call.</p></div></div>
+    </section>
+    <section class="terminal-section section-shell reveal" aria-labelledby="terminalTitle">
+      <div class="terminal-heading"><div><span class="section-index"><span>✶</span><span>ACESSO AO ARQUIVO</span></span><h2 id="terminalTitle">A call está <em>aberta.</em></h2></div><p>Algumas pistas sobre o trio. O terminal fala sozinho — mas aceita um comando seu.</p></div>
+      <div class="terminal-window"><div class="terminal-top"><div class="window-dots"><i></i><i></i><i></i></div><span>manos@constelacao: ~</span><span class="terminal-status"><i></i> AO VIVO</span></div><div class="terminal-body" id="terminalOutput" aria-live="polite" aria-label="Terminal interativo"></div><form class="terminal-input" id="terminalForm"><label for="terminalCommand"><span aria-hidden="true">›</span></label><input id="terminalCommand" type="text" autocomplete="off" placeholder="digite: ajuda" aria-label="Comando do terminal"><button type="submit" aria-label="Executar comando">↵</button></form><div class="terminal-footer"><span>atalho: ↑ para repetir</span><span>conexão: trio-01</span></div></div>
+      <div class="terminal-chips" aria-label="Comandos rápidos"><button type="button" data-command="ajuda">ajuda</button><button type="button" data-command="equipe">equipe</button><button type="button" data-command="memoria">memoria</button><button type="button" data-command="status">status</button><button type="button" data-command="voltar">voltar</button></div>
+    </section>
+    <section class="story-intro section-shell reveal" id="historia"><div class="section-index"><span>01</span><span>O ARQUIVO PRINCIPAL</span></div><div class="story-intro-grid"><div><h2>Em quinze partes,<br><em>uma só história.</em></h2><p>Cada registro é uma pequena cena da jornada. Escolha um capítulo no mapa de navegação no rodapé; a constelação sabe onde você parou.</p></div><aside class="story-key"><span class="key-star">✳</span><p><strong>Chave de leitura</strong><br>É uma crônica poética inspirada na história que vocês compartilharam. As cenas dão forma à lenda; ficam com vocês as lembranças de verdade.</p></aside></div><nav class="chapter-index" id="chapterIndex" aria-label="Índice de capítulos"></nav><div id="chapters"></div></section>
+    <section class="open-letter section-shell reveal" id="carta" aria-labelledby="letterTitle">
+      <div class="letter-stars" aria-hidden="true"><span>✦</span><span>·</span><span>✧</span><span>·</span><span>✦</span></div><div class="section-index"><span>∞</span><span>UM ESPAÇO GUARDADO</span></div><div class="letter-content"><p class="eyebrow">CARTA ABERTA · DE MIGUEL E TÚLIO</p><h2 id="letterTitle">Renan, essa<br>parte é <em>pra você.</em></h2><div class="letter-rule"></div><p class="letter-greeting">Mano Silício,</p><p>A gente queria te lembrar de um negócio simples: você faz parte da história da Jogatina dos Manos. Não só pelas partidas, mas por tudo que a gente viveu e pelas lembranças que ainda aparecem quando alguém puxa assunto.</p><p>A gente sente falta de ter você por perto na call e na jogatina. Então fica aqui o convite: volta pra jogar com a gente quando der vontade. Pode ser uma partida, uma conversa, ou só aparecer pra dar um salve. A gente escolhe o jogo depois — o importante é poder se encontrar de novo.</p><p>Não precisa explicar nada nem prometer frequência. A vida tem seus próprios horários. Se agora não for a hora, tudo bem também. Queríamos só que você soubesse que a porta está aberta e que seu lugar continua sendo seu.</p><p>Se um dia aparecer uma mensagem sua dizendo “bora?”, a resposta já está pronta.</p><p class="letter-signoff">Com saudade e carinho, <strong>Mano Rato de Touca e Mano Holy</strong><span>Miguel &amp; Túlio · a call está aberta</span></p></div><div class="letter-constellation" aria-hidden="true"><span>✦</span><i></i><i></i><i></i><span>✦</span></div>
+    </section>
+    <section class="finale section-shell reveal" id="finale"><span class="finale-glow">✦</span><p class="eyebrow">ARQUIVO EM ESTADO DE ESPERA</p><h2>O próximo registro<br>pode ser <em>nosso.</em></h2><p>Algumas histórias não precisam terminar. Só precisam de mais um “bora?”.</p><a href="#inicio" class="pill-button finale-link">Voltar ao começo <span aria-hidden="true">↑</span></a><span class="finale-signature">RATO DE TOUCA <i>×</i> SILÍCIO <i>×</i> HOLY</span></section>
+  </main>
+  <footer class="site-footer"><a class="brand" href="#inicio"><span class="brand-glyph">✳</span><span>ARQUIVO DOS MANOS</span></a><span>feito com memória, saudade e uma cadeira a mais.</span><span>© SEMPRE QUE DER <i>·</i> 2026</span></footer>
+  <nav class="floating-nav" id="floatingNav" aria-label="Navegação principal"><a href="#inicio" aria-label="Início"><span>⌂</span><small>início</small></a><a href="#elenco" aria-label="O trio"><span>✳</span><small>o trio</small></a><a href="#historia" class="nav-main" aria-label="A história"><span>▤</span><small>história</small></a><a href="#terminalTitle" aria-label="Terminal"><span>⌘</span><small>terminal</small></a><a href="#carta" aria-label="Carta ao Renan"><span>♡</span><small>carta</small></a></nav>
+  <noscript><div class="no-script-note">Este arquivo precisa de JavaScript ativado para abrir os capítulos e o terminal interativo. A carta ao Renan continua visível logo acima.</div></noscript>
+  <script src="story.js"></script><script src="app.js"></script>
+</body>
+</html>
+
+

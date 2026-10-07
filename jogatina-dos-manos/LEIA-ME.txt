@@ -1,0 +1,7 @@
+# Jogatina dos Manos — site interativo
+
+Abra `index.html` no navegador. Os arquivos `styles.css`, `app.js` e `story.js` precisam ficar na mesma pasta.
+
+O site funciona sem instalação ou conexão a um servidor. Tem 15 capítulos e 150 registros, terminal de brincadeira com comandos, retratos ilustrados, tema claro/escuro, efeitos de constelação, navegação flutuante e a carta aberta ao Renan no final.
+
+No terminal, experimente `ajuda`, `equipe`, `memoria`, `mapa`, `status` ou `voltar`.
